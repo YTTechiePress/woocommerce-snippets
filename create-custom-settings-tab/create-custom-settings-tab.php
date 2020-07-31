@@ -14,9 +14,7 @@ function lab_pacakge_cost() {
     $dynamic_fee = get_option( 'techiepress_vat_pricing_dynamic_fee' );
     
     global $woocommerce;
-    
-    $flat_rate = $flat_fee;
-    
+   
     $taxable = $flat_rate + ( $woocommerce->cart->cart_contents_total * $dynamic_fee );
 
     $woocommerce->cart->add_fee( __( 'VAT', 'om-service-widget' ), $taxable );
